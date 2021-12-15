@@ -12,7 +12,7 @@ on:
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
 
     strategy:
       matrix:
@@ -26,15 +26,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-        
-    - name : git init 
-      run : git init 
-    - name : git remote 
-      run : git remote add gAT https://github.com/supremehappy/gitActionsTest.git
-    - name : git pull 
-      run : git pull https://github.com/supremehappy/gitActionsTest.git main
     
-        
     - run: npm ci
     - run: npm run build --if-present
     - run: npm test
