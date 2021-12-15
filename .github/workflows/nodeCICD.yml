@@ -16,7 +16,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [12.x, 14.x, 16.x]
+        node-version: [12.x, 14.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
@@ -28,8 +28,8 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-build-${{ hashFiles('**/package-lock.json') }}
           
-    - name : git pull
-      run : git pull 
+    - name : git init
+      run : git init
       
     - run: npm ci
     - run: npm run build --if-present
