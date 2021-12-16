@@ -28,7 +28,7 @@ jobs:
         cache: 'npm'
     
     - name : find path
-      run : cd /home/test/code/gitActionsTest
+      run : cd /home/test/code/ && rm -Rf gitActionsTest
     - name : path 
       run : echo `pwd`
       
