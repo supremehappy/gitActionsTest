@@ -28,7 +28,7 @@ jobs:
         cache: 'npm'
     
     - name : find path
-      run : cd /home/test/code/gitActionsTest
+      run : cd /home/test/code/gitActionsTest && echo `qwd`
       
     - name : git pull
       run : git pull
